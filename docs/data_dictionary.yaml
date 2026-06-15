@@ -1,0 +1,905 @@
+version: 2
+status: observed
+fields:
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "TVT"
+    normalized_name: "tvt"
+    inferred_type: "decimal"
+    semantic_role: "posible identificador"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "La columna funciona como eje de agrupación en Pipe."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Proprietário da oportunidade"
+    normalized_name: "proprietario da oportunidade"
+    inferred_type: "string"
+    semantic_role: "nivel oportunidad"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<text_words:2>", "<text_words:2>", "<text_words:2>"]
+    evidence:
+      - "Permanece casi constante dentro de TVT."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Membro consultor lider"
+    normalized_name: "membro consultor lider"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 30.1
+    sample_values: ["<text_words:3>", "<text_words:4>", "<text_words:4>"]
+    evidence:
+      - "Constancia dentro de TVT: 90.24%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Razão Social"
+    normalized_name: "razao social"
+    inferred_type: "string"
+    semantic_role: "nivel oportunidad"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<text_words:5>", "<text_words:5>", "<code_like:9>"]
+    evidence:
+      - "Permanece casi constante dentro de TVT."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Data Estimada de Fechamento"
+    normalized_name: "data estimada de fechamento"
+    inferred_type: "date"
+    semantic_role: "nivel temporal"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["2016-11-17", "2018-02-05", "2016-03-30"]
+    evidence:
+      - "Los valores se parsean de forma consistente como fechas."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Data de Fechamento Real"
+    normalized_name: "data de fechamento real"
+    inferred_type: "date"
+    semantic_role: "nivel temporal"
+    semantic_state: "observed"
+    null_percentage: 11.3
+    sample_values: ["2016-11-17", "2018-02-05", "2016-03-30"]
+    evidence:
+      - "Los valores se parsean de forma consistente como fechas."
+      - "Constancia dentro de TVT: 90.1%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Data de criação"
+    normalized_name: "data de criacao"
+    inferred_type: "date"
+    semantic_role: "nivel temporal"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["2019-12-23", "2019-12-23", "2019-12-23"]
+    evidence:
+      - "Los valores se parsean de forma consistente como fechas."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "País"
+    normalized_name: "pais"
+    inferred_type: "string"
+    semantic_role: "nivel oportunidad"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<code_like:5>", "<code_like:5>", "<code_like:5>"]
+    evidence:
+      - "Permanece casi constante dentro de TVT."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Classificação"
+    normalized_name: "classificacao"
+    inferred_type: "string"
+    semantic_role: "nivel classificacao"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<code_like:11>", "<code_like:10>", "<text_words:2>"]
+    evidence:
+      - "El nombre sugiere una dimensión de clasificación."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Produto: Nome do produto"
+    normalized_name: "produto nome do produto"
+    inferred_type: "string"
+    semantic_role: "nivel item"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 4.78
+    sample_values: ["<text_words:7>", "<text_words:5>", "<text_words:4>"]
+    evidence:
+      - "Cambia con frecuencia dentro de TVT y apunta a detalle de ítem."
+      - "Constancia dentro de TVT: 20.4%"
+      - "Cambio dentro de TVT: 79.6%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Nome da oportunidade"
+    normalized_name: "nome da oportunidade"
+    inferred_type: "string"
+    semantic_role: "nivel oportunidad"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<text_words:5>", "<text_words:3>", "<text_words:5>"]
+    evidence:
+      - "Permanece casi constante dentro de TVT."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "BU"
+    normalized_name: "bu"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 4.78
+    sample_values: ["<text_words:2>", "<text_words:2>", "<text_words:2>"]
+    evidence:
+      - "Constancia dentro de TVT: 69.04%"
+      - "Cambio dentro de TVT: 30.96%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Sub Classificação BU Item"
+    normalized_name: "sub classificacao bu item"
+    inferred_type: "string"
+    semantic_role: "nivel classificacao"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 42.71
+    sample_values: ["<code_like:3>", "<code_like:3>", "<code_like:3>"]
+    evidence:
+      - "El nombre sugiere una dimensión de clasificación."
+      - "Constancia dentro de TVT: 28.14%"
+      - "Cambio dentro de TVT: 33.35%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Fase"
+    normalized_name: "fase"
+    inferred_type: "string"
+    semantic_role: "nivel classificacao"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<code_like:9>", "<code_like:9>", "<code_like:9>"]
+    evidence:
+      - "El nombre sugiere una dimensión de clasificación."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Probabilidade de Fechamento"
+    normalized_name: "probabilidade de fechamento"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 48.02
+    sample_values: ["<code_like:5>", "<code_like:4>", "<code_like:5>"]
+    evidence:
+      - "Constancia dentro de TVT: 51.31%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "% Probabilidade de Fechamento"
+    normalized_name: "probabilidade de fechamento"
+    inferred_type: "decimal"
+    semantic_role: "nivel oportunidad"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "Permanece casi constante dentro de TVT."
+      - "Constancia dentro de TVT: 100.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Status da Negociação"
+    normalized_name: "status da negociacao"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 85.44
+    sample_values: ["<code_like:8>", "<code_like:8>", "<code_like:9>"]
+    evidence:
+      - "Alta ausencia relativa impide una lectura funcional fuerte."
+      - "Constancia dentro de TVT: 19.23%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Parceiro"
+    normalized_name: "parceiro"
+    inferred_type: "string"
+    semantic_role: "posible metadato de extracción"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 92.06
+    sample_values: ["<code_like:9>", "<code_like:9>", "<code_like:9>"]
+    evidence:
+      - "Parece capturar trazabilidad operativa más que negocio."
+      - "Constancia dentro de TVT: 12.34%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Crescimento Item"
+    normalized_name: "acv crescimento item"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 4.78
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 7.83%"
+      - "Cambio dentro de TVT: 92.17%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Crescimento Item em Reais"
+    normalized_name: "acv crescimento item em reais"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 4.78
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 7.88%"
+      - "Cambio dentro de TVT: 92.12%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Renovação Item"
+    normalized_name: "acv renovacao item"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 4.78
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 95.59%"
+      - "Cambio dentro de TVT: 4.41%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Renovação Item em Reais"
+    normalized_name: "acv renovacao item em reais"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 4.78
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 95.54%"
+      - "Cambio dentro de TVT: 4.46%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV"
+    normalized_name: "acv"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 4.78
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 2.06%"
+      - "Cambio dentro de TVT: 97.94%"
+    validation_status: "observed"
+  - source_file: "Previa mayo - Pipe.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Item em Reais"
+    normalized_name: "acv item em reais"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 4.78
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 2.06%"
+      - "Cambio dentro de TVT: 97.94%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Vendedor: Nome completo"
+    normalized_name: "vendedor nome completo"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 14.58
+    sample_values: ["<text_words:2>", "<text_words:2>", "<text_words:2>"]
+    evidence:
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Nome Fantasia"
+    normalized_name: "nome fantasia"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 0.0
+    sample_values: ["<text_words:2>", "<code_like:5>", "<text_words:5>"]
+    evidence:
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "TVT"
+    normalized_name: "tvt"
+    inferred_type: "decimal"
+    semantic_role: "posible identificador"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "La columna funciona como eje de agrupación en Pipe."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Data de Fechamento Real"
+    normalized_name: "data de fechamento real"
+    inferred_type: "date"
+    semantic_role: "nivel temporal"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["2026-05-07", "2026-05-07", "2026-05-07"]
+    evidence:
+      - "Los valores se parsean de forma consistente como fechas."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "País"
+    normalized_name: "pais"
+    inferred_type: "string"
+    semantic_role: "ambigua"
+    semantic_state: "pending_validation"
+    null_percentage: 0.0
+    sample_values: ["<code_like:9>", "<code_like:5>", "<code_like:5>"]
+    evidence:
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Classificação"
+    normalized_name: "classificacao"
+    inferred_type: "string"
+    semantic_role: "nivel classificacao"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<text_words:3>", "<text:9>", "<text:9>"]
+    evidence:
+      - "El nombre sugiere una dimensión de clasificación."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Nome da oportunidade"
+    normalized_name: "nome da oportunidade"
+    inferred_type: "string"
+    semantic_role: "posible identificador"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 0.0
+    sample_values: ["<text_words:5>", "<text_words:4>", "<text_words:4>"]
+    evidence:
+      - "Presenta alta unicidad relativa."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "Sub Classificação BU Opp"
+    normalized_name: "sub classificacao bu opp"
+    inferred_type: "string"
+    semantic_role: "nivel classificacao"
+    semantic_state: "supported_hypothesis"
+    null_percentage: 8.33
+    sample_values: ["<text_words:2>", "<text_words:2>", "<text_words:2>"]
+    evidence:
+      - "El nombre sugiere una dimensión de clasificación."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Crescimento Cotação"
+    normalized_name: "acv crescimento cotacao"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Crescimento Cotação em Reais"
+    normalized_name: "acv crescimento cotacao em reais"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Renovação Cotação"
+    normalized_name: "acv renovacao cotacao"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+  - source_file: "Previo mayo - Ganadas.xlsx"
+    source_sheet: "Sheet1"
+    original_name: "ACV Renovação Cotação em Reais"
+    normalized_name: "acv renovacao cotacao em reais"
+    inferred_type: "decimal"
+    semantic_role: "nivel monetario"
+    semantic_state: "observed"
+    null_percentage: 0.0
+    sample_values: ["<number>", "<number>", "<number>"]
+    evidence:
+      - "El nombre y el tipo de valores apuntan a un importe."
+      - "Constancia dentro de TVT: 0.0%"
+      - "Cambio dentro de TVT: 0.0%"
+    validation_status: "observed"
+semantic_crosswalk:
+  version: 1
+  status: provisional
+  validated_by_operator: false
+  scope: "Semantic crosswalk between FRD-required datasets and observed columns in Pipe and Ganadas"
+  source_documents:
+    - "docs/current_state.md"
+    - "docs/pending_validations.md"
+    - "docs/data_dictionary.yaml"
+    - "docs/business_rules.yaml"
+  mapping_status_legend:
+    observed_equivalent: "The required FRD field has a directly observed structural equivalent."
+    candidate_needs_validation: "A plausible observed column exists, but semantic equivalence is not yet validated."
+    missing: "No sufficient column or source exists in the current repository."
+    unsafe_without_operator: "A tempting mapping exists, but using it now would create high functional risk."
+  datasets:
+    - dataset_id: "summary_snapshot"
+      description: "Consolidated regional or country summary expected from FRD tabs like Resumen."
+      frd_cases: ["1.1", "1.2", "2.1", "5.1"]
+      fields:
+        - semantic_field_id: "actual_ytd_acv"
+          business_label: "ACV real acumulado YTD"
+          frd_column_name: "Act-26"
+          expected_source: "Resumen"
+          affected_cases: ["1.1", "1.2", "2.1"]
+          overall_status: "missing"
+          implementation_note: "Do not infer YTD actual sales from Pipe or Ganadas while the summary source is absent."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Pipe contains operational ACV fields, not a consolidated YTD actual metric."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Ganadas has won-deal amounts but no validated equivalent to Act-26."
+        - semantic_field_id: "budget_ytd"
+          business_label: "Budget o cuota acumulada"
+          frd_column_name: "Bud-26"
+          expected_source: "Resumen"
+          affected_cases: ["1.1", "2.1"]
+          overall_status: "missing"
+          implementation_note: "Budget-driven questions remain blocked until a summary source exists."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No budget field observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No budget field observed."
+        - semantic_field_id: "total_fy_target"
+          business_label: "Meta anual total"
+          frd_column_name: "TOTAL"
+          expected_source: "Resumen"
+          affected_cases: ["1.2"]
+          overall_status: "missing"
+          implementation_note: "Gap FY cannot be computed without an annual target."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No annual total target observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No annual total target observed."
+        - semantic_field_id: "percent_to_target"
+          business_label: "Porcentaje de cumplimiento"
+          frd_column_name: "% cumpl."
+          expected_source: "Resumen"
+          affected_cases: ["1.1", "2.1"]
+          overall_status: "missing"
+          implementation_note: "Country and regional compliance ranking stays blocked."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No direct compliance percentage exists."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No direct compliance percentage exists."
+        - semantic_field_id: "coverage_ratio"
+          business_label: "Coverage de pipeline"
+          frd_column_name: "Cobertura"
+          expected_source: "Resumen"
+          affected_cases: ["5.1"]
+          overall_status: "missing"
+          implementation_note: "Coverage should not be backfilled from raw extract sums."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No coverage field observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No coverage field observed."
+    - dataset_id: "won_deals"
+      description: "Won-deal semantic dataset expected from FRD tabs like 2026 Actual."
+      frd_cases: ["1.3", "3.1"]
+      fields:
+        - semantic_field_id: "commercial_classification"
+          business_label: "Clasificación comercial"
+          frd_column_name: "Classificação"
+          expected_source: "2026 Actual"
+          affected_cases: ["1.3"]
+          overall_status: "observed_equivalent"
+          implementation_note: "The dimension exists structurally in both extracts."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Classificação"
+              mapping_status: "observed_equivalent"
+              notes: "Observed with 0% nulls and stable within repeated TVT."
+            - source_name: "Ganadas"
+              column_name: "Classificação"
+              mapping_status: "observed_equivalent"
+              notes: "Observed with 0% nulls across 48 won records."
+        - semantic_field_id: "actual_sales_amount_brl"
+          business_label: "Monto oficial de venta real en BRL"
+          frd_column_name: "ACV Real BSC"
+          expected_source: "2026 Actual"
+          affected_cases: ["1.3", "3.1"]
+          overall_status: "candidate_needs_validation"
+          implementation_note: "The official won-sales amount is still unresolved."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Pipe is not a safe source of real won-sales totals."
+            - source_name: "Ganadas"
+              column_name: "ACV Crescimento Cotação em Reais"
+              mapping_status: "candidate_needs_validation"
+              notes: "Possible component of won amount, not validated as the final official value."
+            - source_name: "Ganadas"
+              column_name: "ACV Renovação Cotação em Reais"
+              mapping_status: "candidate_needs_validation"
+              notes: "Possible component of won amount, not validated as the final official value."
+        - semantic_field_id: "service_line"
+          business_label: "LOB o línea de servicio"
+          frd_column_name: "LOB"
+          expected_source: "2026 Actual"
+          affected_cases: ["3.1"]
+          overall_status: "missing"
+          implementation_note: "Do not substitute BU for LOB without operator validation."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "BU"
+              mapping_status: "unsafe_without_operator"
+              notes: "BU may be related, but equivalence to LOB is not validated."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No LOB-like field observed."
+        - semantic_field_id: "won_close_date"
+          business_label: "Fecha de cierre real"
+          frd_column_name: "Data de Fechamento Real"
+          expected_source: "2026 Actual"
+          affected_cases: ["1.3", "3.1"]
+          overall_status: "candidate_needs_validation"
+          implementation_note: "Structurally available, but only safe after source validation."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Data de Fechamento Real"
+              mapping_status: "candidate_needs_validation"
+              notes: "Present, but Pipe is not yet a validated real-sales source."
+            - source_name: "Ganadas"
+              column_name: "Data de Fechamento Real"
+              mapping_status: "candidate_needs_validation"
+              notes: "Best candidate for real close date if Ganadas is validated as won-sales source."
+    - dataset_id: "pipeline_positions"
+      description: "Pipeline dataset expected from FRD tabs like Pipe Total or TOP views."
+      frd_cases: ["3.2", "5.2", "5.3"]
+      fields:
+        - semantic_field_id: "business_unit"
+          business_label: "Unidad de negocio"
+          frd_column_name: "BU"
+          expected_source: "Pipe Total"
+          affected_cases: ["3.2"]
+          overall_status: "observed_equivalent"
+          implementation_note: "The structural BU field exists in Pipe."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "BU"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly, though some rows are null and values vary within repeated TVT."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Ganadas is not used as pipeline source."
+        - semantic_field_id: "pipeline_status"
+          business_label: "Status comercial de pipeline"
+          frd_column_name: "Status"
+          expected_source: "Pipe Total"
+          affected_cases: ["3.2"]
+          overall_status: "unsafe_without_operator"
+          implementation_note: "Status questions should stay conditional until completeness and semantics are confirmed."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Status da Negociação"
+              mapping_status: "unsafe_without_operator"
+              notes: "85.44% nulls make it unsafe as a reporting-grade status field."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No pipeline status field observed."
+        - semantic_field_id: "pipeline_phase"
+          business_label: "Fase de pipeline"
+          frd_column_name: "Fase"
+          expected_source: "Pipe Total"
+          affected_cases: ["5.2", "5.3"]
+          overall_status: "observed_equivalent"
+          implementation_note: "This is the strongest structural field for pipeline-health questions."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Fase"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly and stable within repeated TVT groups."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Ganadas is not a pipeline-stage dataset."
+        - semantic_field_id: "pipeline_amount_brl"
+          business_label: "Monto oficial de pipeline en BRL"
+          frd_column_name: "ACV R$"
+          expected_source: "Pipe Total"
+          affected_cases: ["3.2", "5.2", "5.3"]
+          overall_status: "candidate_needs_validation"
+          implementation_note: "Monetary aggregation is the main unresolved issue in Pipe."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "ACV Item em Reais"
+              mapping_status: "candidate_needs_validation"
+              notes: "Best current candidate for pipeline amount, but not operator-validated."
+            - source_name: "Pipe"
+              column_name: "ACV"
+              mapping_status: "unsafe_without_operator"
+              notes: "Unsafe for direct sum because values vary within 97.94% of repeated TVT."
+            - source_name: "Pipe"
+              column_name: "ACV Crescimento Item em Reais"
+              mapping_status: "candidate_needs_validation"
+              notes: "Possible component, not clearly the final reporting amount."
+            - source_name: "Pipe"
+              column_name: "ACV Renovação Item em Reais"
+              mapping_status: "candidate_needs_validation"
+              notes: "Possible component, not clearly the final reporting amount."
+        - semantic_field_id: "estimated_close_date"
+          business_label: "Fecha estimada de cierre"
+          frd_column_name: "Data Estimada de Fechamento"
+          expected_source: "Pipe Total"
+          affected_cases: ["3.2", "5.2", "5.3"]
+          overall_status: "observed_equivalent"
+          implementation_note: "A strong candidate for time-based pipeline slicing."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Data Estimada de Fechamento"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly with 0% nulls and stable within repeated TVT."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Not a pipeline planning source."
+        - semantic_field_id: "opportunity_name"
+          business_label: "Nombre de oportunidad"
+          frd_column_name: "Nome da oportunidade"
+          expected_source: "Pipe Total or TOP tabs"
+          affected_cases: ["5.3"]
+          overall_status: "observed_equivalent"
+          implementation_note: "Safe for listing deals, not sufficient by itself for financial reporting."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Nome da oportunidade"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly and stable within repeated TVT."
+            - source_name: "Ganadas"
+              column_name: "Nome da oportunidade"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly, but Ganadas is not the pipeline source."
+    - dataset_id: "sales_rep_scorecard"
+      description: "Executive-level scorecard expected from Resumen x Comercial Latam_2026."
+      frd_cases: ["4.1"]
+      fields:
+        - semantic_field_id: "sales_executive_name"
+          business_label: "Nombre del ejecutivo"
+          frd_column_name: "Ejecutivo"
+          expected_source: "Resumen x Comercial Latam_2026"
+          affected_cases: ["4.1", "4.3"]
+          overall_status: "candidate_needs_validation"
+          implementation_note: "Observed names exist, but not yet in a validated scorecard shape."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Proprietário da oportunidade"
+              mapping_status: "candidate_needs_validation"
+              notes: "Likely an opportunity owner, not necessarily the official executive dimension."
+            - source_name: "Ganadas"
+              column_name: "Vendedor: Nome completo"
+              mapping_status: "candidate_needs_validation"
+              notes: "Likely a seller name, but not a validated scorecard field."
+        - semantic_field_id: "won_amount_by_executive"
+          business_label: "Ganadas por ejecutivo"
+          frd_column_name: "Ganadas"
+          expected_source: "Resumen x Comercial Latam_2026"
+          affected_cases: ["4.1"]
+          overall_status: "missing"
+          implementation_note: "Top-performer logic stays blocked until an executive summary source exists."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No executive-level won metric observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "Amounts exist per deal, not as executive scorecard."
+        - semantic_field_id: "percent_ytd_by_executive"
+          business_label: "Porcentaje YTD por ejecutivo"
+          frd_column_name: "% YTD"
+          expected_source: "Resumen x Comercial Latam_2026"
+          affected_cases: ["4.1"]
+          overall_status: "missing"
+          implementation_note: "Sub-50% quota calculations remain blocked."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No quota or YTD attainment field observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No quota or YTD attainment field observed."
+    - dataset_id: "sales_activity"
+      description: "Sales activity dataset expected from Detalle de visitas."
+      frd_cases: ["4.3"]
+      fields:
+        - semantic_field_id: "visit_count"
+          business_label: "Visitas comerciales"
+          frd_column_name: "Visitas"
+          expected_source: "Detalle de visitas"
+          affected_cases: ["4.3"]
+          overall_status: "missing"
+          implementation_note: "Visit-conversion questions are blocked by missing source."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No visit count or activity metric observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No visit count or activity metric observed."
+    - dataset_id: "client_concentration"
+      description: "Country-client concentration dataset expected from Paretto por pais."
+      frd_cases: ["6.1"]
+      fields:
+        - semantic_field_id: "country"
+          business_label: "País"
+          frd_column_name: "País"
+          expected_source: "Paretto por pais"
+          affected_cases: ["6.1"]
+          overall_status: "observed_equivalent"
+          implementation_note: "The geography dimension exists, but not the final pareto dataset."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "País"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly."
+            - source_name: "Ganadas"
+              column_name: "País"
+              mapping_status: "observed_equivalent"
+              notes: "Observed directly."
+        - semantic_field_id: "client_name"
+          business_label: "Cliente"
+          frd_column_name: "Cliente"
+          expected_source: "Paretto por pais"
+          affected_cases: ["6.1"]
+          overall_status: "candidate_needs_validation"
+          implementation_note: "Client identity needs functional confirmation before any concentration logic."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: "Razão Social"
+              mapping_status: "candidate_needs_validation"
+              notes: "Likely legal entity or customer name."
+            - source_name: "Ganadas"
+              column_name: "Nome Fantasia"
+              mapping_status: "candidate_needs_validation"
+              notes: "Likely trade name; may not match legal entity naming in Pipe."
+        - semantic_field_id: "revenue_share"
+          business_label: "Participación de ingresos"
+          frd_column_name: "Participacion"
+          expected_source: "Paretto por pais"
+          affected_cases: ["6.1"]
+          overall_status: "missing"
+          implementation_note: "No revenue-share or pareto field exists in the current extracts."
+          observed_mappings:
+            - source_name: "Pipe"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No participation field observed."
+            - source_name: "Ganadas"
+              column_name: null
+              mapping_status: "missing"
+              notes: "No participation field observed."

@@ -1,0 +1,73 @@
+﻿Documento de Requerimientos Funcionales (FRD)
+Casos de Uso para Agente IA Estructurados en Tablas
+A continuación, se presentan los casos de uso agrupados por foco de negocio. Cada caso de uso está organizado detallando el INPUT (Prompt del usuario), el PROCESO (Lógica de programación y orígenes de datos) y el OUTPUT (Formato de respuesta esperado).
+Considerar que cada pregunta puede ser aplicada:
+• Latam (consolidado)
+• País (Chile, Colombia, Argentina, Perú…)
+• LOB (Digital, Cloud, Cyber, etc)
+• LOB AJUSTADA (SAP, INFRA, BROKER, etc)
+• PARTNER (AWS, GOOGLE, MS, etc)
+Comparaciones más habituales:
+• Cumplimiento vs Budget
+• Cumplimiento vs Año Anterior
+• Comparación Mes a Mes
+Foco A: Visión Consolidada y de Crecimiento
+Caso 1.1: ACV YTD vs Presupuesto RegionalINPUT"¿Cuál es el ACV YTD acumulado a la fecha en LATAM y su % de cumplimiento frente al budget?"PROCESOOrígenes de Datos:
+Pestaña "Resumen" (Fila: "LATAM" | Columnas: "Act-26", "Bud-26", "% cumpl.").
+
+Lógica Algorítmica:
+Ubicar la fila "LATAM". Extraer numéricamente el valor de "Act-26" (Real) y el "% cumpl.".OUTPUTEl ACV acumulado (YTD) de LATAM es de [Valor Act-26] R$, logrando un cumplimiento del [% cumpl.]% respecto al budget.Caso 1.2: Cálculo de Brecha (Gap) AnualINPUT"¿Cuánto ACV nos falta vender para cumplir el objetivo de todo el año (Gap FY) en LATAM?"PROCESOOrígenes de Datos:
+Pestaña "Resumen" (Fila: "LATAM" | Columnas: "Act-26", "TOTAL").
+
+Lógica Algorítmica:
+Extraer el valor "TOTAL" (Budget Anualizado) y restar el valor "Act-26". Fórmula: Gap = TOTAL - Act-26.OUTPUTPara cumplir la cuota del año completo (FY), a LATAM le falta asegurar un Gap de [Resultado Gap] R$.Caso 1.3: Distribución Nuevos Logos vs RenovacionesINPUT"¿Qué porcentaje de nuestra venta YTD viene de Nuevos Logos vs protección de base?"PROCESOOrígenes de Datos:
+Pestaña "2026 Actual" (Columnas: "Classificação", "ACV Real BSC").
+
+Lógica Algorítmica:
+Agrupar por "Classificação". Sumar "ACV Real BSC" donde el valor sea "Novo Cliente" (A) y calcular total (B). Ratio: (A / B) * 100.OUTPUTDe las ventas totales, los 'Nuevos Logos' representan el [Ratio]% del ACV ganado.
+Foco B: Desempeño Geográfico (Country Level)
+Caso 2.1: Rendimiento Geográfico ConsolidadoINPUT"¿Cuánto ha vendido Chile, Colombia, Perú y Argentina y quién lidera el cumplimiento?"PROCESOOrígenes de Datos:
+Pestaña "Resumen" (Filas: Nombres de países | Columnas: "Act-26", "% cumpl.").
+
+Lógica Algorítmica:
+Filtrar filas de los 4 países. Extraer "Act-26" y "% cumpl.". Ordenar en formato descendente (DESC) según "% cumpl.".OUTPUTEl país que lidera el cumplimiento es [País Top 1] con un [%]%, mientras que [País Bottom 1] presenta el mayor rezago con un [%]%.
+Foco C: Unidades de Negocio (LOB/BU)
+Caso 3.1: Línea de Servicio con Mayor TracciónINPUT"¿Cuál es la Unidad de Negocio (BU) o Línea de Servicio que ha generado mayor Revenue este año?"PROCESOOrígenes de Datos:
+Pestaña "2026 Actual" (Columnas: "LOB", "ACV Real BSC").
+
+Lógica Algorítmica:
+Ejecutar GROUP BY "LOB". Sumar "ACV Real BSC". Ordenar DESC y seleccionar el primer registro.OUTPUTLa unidad de negocio líder en ventas YTD es [LOB], acumulando un total de [Suma] R$.Caso 3.2: Pipeline Vivo por Unidad DigitalINPUT"¿Cuánto Pipeline está Committed actualmente para la unidad Digital Business?"PROCESOOrígenes de Datos:
+Pestaña "Pipe Total" (Columnas: "BU", "Status", "ACV R$").
+
+Lógica Algorítmica:
+Filtrar donde BU == "Digital Business" AND Status == "Committed". Sumar "ACV R$".OUTPUTLa Unidad de Digital Business cuenta actualmente con [Suma] R$ en etapa de Committed.
+Foco D: Productividad y Fuerza de Ventas
+Caso 4.1: Top Performers y RezagadosINPUT"Lista a los 3 mejores ejecutivos de la región y qué porcentaje del equipo está bajo el 50% de cuota."PROCESOOrígenes de Datos:
+Pestaña "Resumen x Comercial Latam_2026" (Columnas: "Ejecutivo", "Ganadas", "% YTD").
+
+Lógica Algorítmica:
+Ordenar DESC por "Ganadas" para Top 3. Calcular ratio: (Filas con "% YTD" < 0.50 / Total de Filas) * 100.OUTPUTTop 3 Ejecutivos: [Lista]. El [Ratio]% de la fuerza de ventas rinde por debajo del 50%.Caso 4.3: Conversión por Actividad (Visitas)INPUT"¿Cuántas visitas en promedio requiere un ejecutivo para cerrar un negocio?"PROCESOOrígenes de Datos:
+Pestañas "Detalle de visitas" y "Resumen x Comercial Latam_2026".
+
+Lógica Algorítmica:
+JOIN entre ambas tablas. Calcular ACV por visita = Ganadas / Visitas. Promediar el total.OUTPUTEn promedio en LATAM, cada visita comercial ejecutada se traduce en [Promedio] R$ de ACV cerrado.
+Foco E: Predictibilidad (Pipeline Health)
+Caso 5.1: Cobertura de Pipeline (Coverage Ratio)INPUT"¿Cuál es nuestra cobertura de Pipeline real para alcanzar los números del año?"PROCESOOrígenes de Datos:
+Pestaña "Resumen" (Fila: "LATAM" | Columna: "Cobertura").
+
+Lógica Algorítmica:
+Extraer "Cobertura". Validar: Si Cobertura < 3.0 disparar alerta de Riesgo.OUTPUTEl ratio de cobertura actual es de [Valor]x. [Si aplica: Alerta de riesgo matemático].Caso 5.2: Cuellos de Botella en Etapa TempranaINPUT"¿Cuánto dinero tenemos estancado en etapa de 'Qualificação'?"PROCESOOrígenes de Datos:
+Pestaña "Pipe Total" (Columnas: "Fase", "ACV Item em Reais").
+
+Lógica Algorítmica:
+Filtrar Fase == "Qualificação". Sumar "ACV Item em Reais".OUTPUTExiste un total de [Suma] R$ inmovilizados en la fase inicial de Qualificação.Caso 5.3: Monitoreo de Mega-DealsINPUT"¿Cuáles son los 3 negocios más grandes en etapa de Negociación?"PROCESOOrígenes de Datos:
+Pestañas "Public - TOP" y "Digital - TOP".
+
+Lógica Algorítmica:
+Concatenar ambas pestañas. Filtrar Fase == "Negociação". Ordenar DESC por ACV. Extraer top 3.OUTPUT[Cliente] - [Proyecto] por un valor de [ACV] R$.
+Foco F: Alertas de Dependencia
+Caso 6.1: Riesgo de Concentración de Clientes (Pareto)INPUT"¿Qué porcentaje de nuestros ingresos depende de los top 3 clientes de Argentina?"PROCESOOrígenes de Datos:
+Pestaña "Paretto por pais" (Columnas: "País", "Participacion").
+
+Lógica Algorítmica:
+Filtrar País == "Argentina". Tomar los 3 primeros registros y sumar "Participacion".OUTPUTLos 3 principales clientes en Argentina concentran el [Suma]% de los ingresos totales.

@@ -1,0 +1,163 @@
+version: 2
+status: provisional
+scope: "FRD case routing and provisional implementation rules"
+validated_by_operator: false
+source_documents:
+  - "docs/current_state.md"
+  - "docs/pending_validations.md"
+  - "docs/data_dictionary.yaml"
+global_defaults:
+  source_relationship_mode: "independent_sources"
+  allow_productive_join_between_pipe_and_ganadas: false
+  allow_fuzzy_matching: false
+  allow_budget_inference_without_master: false
+  allow_pipeline_sum_without_monetary_validation: false
+  allow_lob_answer_from_bu_without_validation: false
+  blocked_response_policy:
+    status: "blocked"
+    message_template: "La pregunta requiere una fuente oficial o una validación funcional que aún no existe."
+  conditional_response_policy:
+    status: "conditional"
+    message_template: "La pregunta es técnicamente cercana, pero sigue pendiente de validación funcional."
+rules:
+  - id: "R1"
+    name: "source_selection_by_case"
+    state: "observed"
+    rule: "Cada caso FRD debe declarar una fuente oficial explícita antes de habilitar respuestas."
+  - id: "R2"
+    name: "pipe_granularity_guard"
+    state: "supported_hypothesis"
+    rule: "Pipe no debe agregarse ciegamente por fila hasta validar qué representa una fila y qué representa TVT."
+  - id: "R3"
+    name: "monetary_field_by_context"
+    state: "pending_validation"
+    rule: "El campo monetario oficial depende del contexto: pipeline, ganadas, revenue real o mix."
+  - id: "R4"
+    name: "temporal_field_by_metric"
+    state: "pending_validation"
+    rule: "La fecha oficial debe mapearse por tipo de métrica y no asumirse una sola para todo."
+  - id: "R5"
+    name: "no_cross_source_join_without_key"
+    state: "observed"
+    rule: "Pipe y Ganadas deben tratarse como fuentes independientes mientras no exista llave validada."
+frd_cases:
+  - case_id: "1.1"
+    label: "ACV YTD vs presupuesto regional"
+    expected_source: "Resumen"
+    provisional_source: null
+    provisional_status: "blocked_missing_source"
+    monetary_field: null
+    temporal_field: null
+    business_dimension: "LATAM"
+    evidence_status: "not_supported"
+    operator_decision_needed: "Confirmar fuente sustituta o mantener bloqueado."
+  - case_id: "1.2"
+    label: "Gap FY LATAM"
+    expected_source: "Resumen"
+    provisional_source: null
+    provisional_status: "blocked_missing_source"
+    monetary_field: null
+    temporal_field: null
+    business_dimension: "LATAM"
+    evidence_status: "not_supported"
+    operator_decision_needed: "Confirmar fuente sustituta o mantener bloqueado."
+  - case_id: "1.3"
+    label: "Nuevos logos vs protección de base"
+    expected_source: "2026 Actual"
+    provisional_source: "Ganadas"
+    provisional_status: "conditional"
+    monetary_field: "pending_operator"
+    temporal_field: "Data de Fechamento Real"
+    business_dimension: "Classificação"
+    evidence_status: "pending_validation"
+    operator_decision_needed: "Confirmar si Ganadas representa ventas reales y cuál campo equivale a ACV Real BSC."
+  - case_id: "2.1"
+    label: "Cumplimiento por país"
+    expected_source: "Resumen"
+    provisional_source: "Ganadas_or_master"
+    provisional_status: "conditional"
+    monetary_field: "pending_operator"
+    temporal_field: "pending_operator"
+    business_dimension: "País"
+    evidence_status: "pending_validation"
+    operator_decision_needed: "Confirmar fuente oficial de cumplimiento y disponibilidad de % cumpl."
+  - case_id: "3.1"
+    label: "Revenue por BU o LOB"
+    expected_source: "2026 Actual"
+    provisional_source: "Pipe_structure_only"
+    provisional_status: "conditional"
+    monetary_field: "pending_operator"
+    temporal_field: "pending_operator"
+    business_dimension: "BU_or_LOB_pending_operator"
+    evidence_status: "pending_validation"
+    operator_decision_needed: "Confirmar dimensión oficial y campo monetario de revenue real."
+  - case_id: "3.2"
+    label: "Pipeline committed para Digital Business"
+    expected_source: "Pipe Total"
+    provisional_source: "Pipe"
+    provisional_status: "conditional"
+    monetary_field: "ACV Item em Reais_candidate"
+    temporal_field: "Data Estimada de Fechamento_candidate"
+    business_dimension: "BU"
+    evidence_status: "supported_hypothesis"
+    operator_decision_needed: "Confirmar estado oficial y monto oficial de pipeline."
+  - case_id: "4.1"
+    label: "Top ejecutivos y % bajo 50%"
+    expected_source: "Resumen x Comercial Latam_2026"
+    provisional_source: null
+    provisional_status: "blocked_missing_source"
+    monetary_field: null
+    temporal_field: null
+    business_dimension: "Ejecutivo"
+    evidence_status: "not_supported"
+    operator_decision_needed: "Confirmar fuente de metas por comercial o mantener bloqueado."
+  - case_id: "4.3"
+    label: "Conversión por visitas"
+    expected_source: "Detalle de visitas + Resumen x Comercial Latam_2026"
+    provisional_source: null
+    provisional_status: "blocked_missing_source"
+    monetary_field: null
+    temporal_field: null
+    business_dimension: "Ejecutivo"
+    evidence_status: "not_supported"
+    operator_decision_needed: "Confirmar fuente de visitas o mantener bloqueado."
+  - case_id: "5.1"
+    label: "Coverage ratio"
+    expected_source: "Resumen"
+    provisional_source: null
+    provisional_status: "blocked_missing_source"
+    monetary_field: null
+    temporal_field: null
+    business_dimension: "LATAM"
+    evidence_status: "not_supported"
+    operator_decision_needed: "Confirmar fuente de cobertura o mantener bloqueado."
+  - case_id: "5.2"
+    label: "Dinero estancado en Qualificação"
+    expected_source: "Pipe Total"
+    provisional_source: "Pipe"
+    provisional_status: "preloaded"
+    monetary_field: "ACV Item em Reais_candidate"
+    temporal_field: "pending_operator"
+    business_dimension: "Fase"
+    evidence_status: "observed"
+    operator_decision_needed: "Validar que ACV Item em Reais es el monto oficial para pipeline."
+  - case_id: "5.3"
+    label: "Top 3 negocios en Negociação"
+    expected_source: "Public - TOP + Digital - TOP"
+    provisional_source: "Pipe"
+    provisional_status: "conditional"
+    monetary_field: "ACV Item em Reais_candidate"
+    temporal_field: "pending_operator"
+    business_dimension: "Fase + oportunidad"
+    evidence_status: "supported_hypothesis"
+    operator_decision_needed: "Confirmar si Pipe sustituye las pestañas TOP y qué monto usar."
+  - case_id: "6.1"
+    label: "Pareto top clientes Argentina"
+    expected_source: "Paretto por pais"
+    provisional_source: null
+    provisional_status: "blocked_missing_source"
+    monetary_field: null
+    temporal_field: "pending_operator"
+    business_dimension: "País + cliente"
+    evidence_status: "not_supported"
+    operator_decision_needed: "Confirmar fuente oficial o regla de cálculo."
