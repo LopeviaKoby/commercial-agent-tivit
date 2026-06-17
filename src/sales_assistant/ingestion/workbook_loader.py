@@ -46,6 +46,10 @@ MONEY_KEYWORDS = (
     "total",
 )
 IDENTIFIER_KEYWORDS = ("id", "codigo", "código", "code", "cod", "tvt")
+ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+ISO_DATETIME_PATTERN = re.compile(
+    r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?$"
+)
 
 
 def is_missing(value: Any) -> bool:
@@ -121,6 +125,20 @@ def parse_date_like(value: Any) -> datetime | None:
     text = safe_str(value)
     if not text:
         return None
+
+    if ISO_DATETIME_PATTERN.fullmatch(text):
+        normalized = text.replace("Z", "+00:00")
+        normalized = re.sub(r"([+-]\d{2})(\d{2})$", r"\1:\2", normalized)
+        try:
+            return datetime.fromisoformat(normalized)
+        except ValueError:
+            pass
+
+    if ISO_DATE_PATTERN.fullmatch(text):
+        try:
+            return datetime.fromisoformat(text)
+        except ValueError:
+            pass
 
     parsed = pd.to_datetime(text, dayfirst=True, errors="coerce")
     if pd.isna(parsed):

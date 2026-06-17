@@ -5,7 +5,8 @@ __pycache__/
 .ruff_cache/
 .coverage
 *.pyc
-.env
+.sf/
+.salesforce/
 
 data/input/*
 !data/input/.gitkeep
@@ -15,3 +16,17 @@ data/output/*
 
 data/samples/*
 !data/samples/.gitkeep
+
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+
+# Datos extraídos de Salesforce
+salesforce_poc/raw/
+salesforce_poc/curated/
+salesforce_poc/**/*.commercial.csv
+
+# Credenciales locales, por precaución
+application_default_credentials.json
+service-account*.json
